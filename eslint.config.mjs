@@ -35,6 +35,21 @@ export default tseslint.config(
     },
   },
   compat.config({
+    plugins: ["prefer-arrow-functions"],
+    rules: {
+      "prefer-arrow-functions/prefer-arrow-functions": [
+        "error",
+        {
+          allowObjectProperties: false,
+          classPropertiesAllowed: false,
+          disallowPrototype: false,
+          returnStyle: "unchanged",
+          singleReturnOnly: false,
+        },
+      ],
+    },
+  }),
+  compat.config({
     extends: ["plugin:drizzle/recommended"],
   }),
   compat.config({
@@ -44,5 +59,5 @@ export default tseslint.config(
   {
     extends: [eslintReact.configs["recommended-type-checked"]],
   },
-  eslintConfigPrettier
+  eslintConfigPrettier,
 );
