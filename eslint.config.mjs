@@ -13,6 +13,23 @@ const compat = new FlatCompat({
 
 export default tseslint.config(
   eslint.configs.recommended,
+  {
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["react"],
+              importNames: ["*"],
+              message:
+                "Please use named imports from React instead of importing the entire library",
+            },
+          ],
+        },
+      ],
+    },
+  },
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   {
