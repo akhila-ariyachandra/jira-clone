@@ -6,5 +6,6 @@ module.exports = {
     require.resolve("@prettier/plugin-oxc"),
     require.resolve("prettier-plugin-organize-imports"),
     require.resolve("prettier-plugin-tailwindcss"),
+    require.resolve("prettier-plugin-prisma"),
   ],
 };
